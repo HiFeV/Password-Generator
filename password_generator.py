@@ -4,6 +4,13 @@
 import string
 import random
 import time
+import os
+
+def cls():
+    os.system('cls' if os.name=='nt' else 'clear')
+
+
+
 
 length = int(input("Choose the length of the password: "))
 
@@ -11,13 +18,17 @@ letters = string.ascii_letters
 digits =  string.digits
 punctuation = string.punctuation
 
+
 elements = letters + digits + punctuation
 passwd = random.sample(elements, length)
+
 
 result = "".join(passwd)
 print("[+] Your password is: ", result)
 
+
 ask = input("Do you want to save your password in a textfile ? YES / NO: ")
+cls()
 
 
 if ask == "NO":
